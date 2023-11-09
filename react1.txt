@@ -1,0 +1,26 @@
+const App = () => {
+  // teknisesti yo. on JavaScript-funktio, joka ei saa parametriä
+  // joka sijoitetaan vakioarvoiseen muuttujaan App
+  // yo. funktio palauttaa sisältämänsä arvon
+  // React komponentti kirjoitetaan yl. JSX:llä (näyttää HTML)
+  // komponentin sisältö käännettään suoritettaessa JavaScriptiksi
+  // Babel hoitaa käännöksen
+  // JSX lähellä Java Springin Thymeleafia
+
+  console.log('Hello from komponentti')
+
+  const now = new Date()
+  const a = 10
+  const b = 20
+  console.log(now, a+b)
+
+  return (
+    // komponentti rendelöityy div-tagina
+    <div>
+      <p>Servus</p>
+      <p>
+        {a} plus {b} is {a+b}
+      </p>
+    </div>
+  )
+}

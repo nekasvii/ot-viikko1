@@ -1,0 +1,9 @@
+
+Reactin käynnistys:
+Git Bash -> npm run dev
+selain -> localhost:5173/  (tai seuraava portti)
+
+Reactin keskeiset tiedostot src-kansiossa: App.jsx ja main.jsx
+
+debuggausta:
+console.log('viesti')
