@@ -1,59 +1,65 @@
-// kolme komponenttia Header nimi
-// Content osat ja teht määrät
-// ja Total teht yhteismäärä
-// kaikki data komponentissa App, joka välittää propseilla
+// version 1.4
+// oliot koodiin: parts-taulukko
 
 const App = () => {
   const course = 'Half Stack application development'
-  const part1 = 'Fundamentals of React'
-  const exercises1 = 10
-  const part2 = 'Using props to pass data'
-  const exercises2 = 7
-  const part3 = 'State of a component'
-  const exercises3 = 14
+  const parts = [
+    {
+      name: 'Fundamentals of React',
+      exercises: 10
+    },
+    {
+      name: 'Using props to pass data',
+      exercises: 7
+    },
+    {
+      name: 'State of a component',
+      exercises: 14
+    }
+  ]
 
   return (
     <div>
-      <Header title={course}/>
-
-      <Content part1={part1} exercises1={exercises1} part2={part2} exercises2={exercises2} part3={part3} exercises3={exercises3} />
-
-      <Total total={exercises1 + exercises2 + exercises3} />
+      <Header course={course} />
+      <Content parts={parts} />
+      <Total parts={parts} />
     </div>
   )
 }
 
-const Header = (props) => {
+const Header = ({course}) => {
+  console.log(course)
   return (
-    <div>
-        <h1>{props.title}</h1>
-    </div>
+    <h1>{course}</h1>
   )
 }
 
-const Part = (props) => {
+const Part = ({name, exercises}) => {
+  console.log(name, exercises)
   return (
     <p> 
-      {props.topic} {props.number}
+      {name} {exercises}
     </p>
   )
 }
 
-const Content = (props) => {
+const Content = ({parts}) => {
+  console.log(parts)
   return (
     <div>
-      <Part topic={props.part1} number={props.exercises1} />
-      <Part topic={props.part2} number={props.exercises2} />
-      <Part topic={props.part3} number={props.exercises3} />
+      <Part name={parts[0].name} exercises={parts[0].exercises} />
+      <Part name={parts[1].name} exercises={parts[1].exercises} />
+      <Part name={parts[2].name} exercises={parts[2].exercises} />
     </div>
   )
 }
 
-const Total = (props) => {
+const Total = ({parts}) => {
+  console.log({parts})
   return (
     <div>
       <p>
-      Number of exercises {props.total}
+      Number of exercises {parts[0].exercises + parts[1].exercises + parts[2].exercises}
       </p>
     </div>
   )
