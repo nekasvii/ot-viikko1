@@ -1,7 +1,8 @@
-// tehtävä 1.13 anekdootit step2
+// tehtävä 1.14 anekdootit step3
 // antaa taulukosta random anekdootin
 // lisätty nappula generoimaan satunnaisen anekdootin
 // lisätään anekdootin äänestysmahdollisuus
+// lisätään sivulle tieto eniten ääniä saaneesta anekdootista ja sen äänimäärästä
 
 import { useState } from 'react'
 
@@ -37,13 +38,19 @@ const App = () => {
     copyTablet[selected] += 1
     setVotes(copyTablet)
     console.log("äänestetty anekdoottia indeksissä ", selected)
+    console.log("eniten ääniä saanut anekdootti indeksissä ", copyTablet.indexOf(Math.max(...copyTablet)))
+    console.log("ja ääniä sillä ", Math.max(...copyTablet))
   }
 
   return (
     <div>
+      <h1>Anecdote of the day</h1>
       {anecdotes[selected]} <br />
       <Button handleClick={givePoint} text="vote" />
       <Button handleClick={getRandom} text="next anecdote" />
+      <h1>Anecdote with most votes</h1> 
+      {anecdotes[votes.indexOf(Math.max(...votes))]} <br />
+      has {Math.max(...votes)} votes
     </div>
   )
 }
