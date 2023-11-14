@@ -1,0 +1,21 @@
+
+Mozillan JavaScript-materiaali:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+A re-introduction to JavaScript (JS-tutorial):
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
+
+ilmainen kirjasarja:
+https://github.com/getify/You-Dont-Know-JS
+
+JavaScriptin oppimateriaalia:
+https://javascript.info/
+
+Screencasteja JS ja React:
+https://egghead.io/
+
+Reactin tutoriaali:
+https://react.dev/learn/tutorial-tic-tac-toe
+
+Reactin dokumentaatio:
+https://react.dev/learn/choosing-the-state-structure
