@@ -127,7 +127,7 @@ const t = [1, 2, 3]
 const tSquared = t.map(p => p * p)
 // tSquared on nyt [1, 4, 9]
 
-SAMT FUNKTIOTnuolinotaatiolla ja yhdenlauseen funktiona:
+SAMA FUNKTIOTnuolinotaatiolla ja yhdenlauseen funktiona:
 
 const bornYear = () => new Date().getFullYear() - age
 
