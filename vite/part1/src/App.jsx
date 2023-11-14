@@ -1,9 +1,10 @@
-// tehtävä 1.7 unicafe step2
+// tehtävä 1.9 unicafe step2
 // Unicafe-ruokalan asiakaspalauteappi
 // kerää asiakastyytyväisyydestä: good/neutral/bad 
 // kertoo kyselyn tuloksen
 // lisätty arvot total, avarage, positive
 // siirretty statistiikka omaksi funktiokseen
+// lisätty: statistiikka näytetään vasta feedbackin jälkeen
 
 import { useState } from 'react'
 
@@ -17,6 +18,11 @@ const Statistics = ({ good, neutral, bad}) => {
   const avarage = (good - bad) / total
   const positive = good / total * 100
 
+  if (total == 0) {
+    return (
+      <div> <br /> No feedback given</div>
+    )
+  }
   return (
     <div>
     <h2>statistics</h2>
