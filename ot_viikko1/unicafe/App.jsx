@@ -1,4 +1,4 @@
-// tehtävä 1.10 unicafe step5
+// tehtävä 1.11 unicafe step6
 // Unicafe-ruokalan asiakaspalauteappi
 // kerää asiakastyytyväisyydestä: good/neutral/bad 
 // kertoo kyselyn tuloksen
@@ -6,7 +6,7 @@
 // siirretty statistiikka omaksi funktiokseen
 // lisätty: statistiikka näytetään vasta feedbackin jälkeen
 // Button ja StatisticLine omiksi komponenteiksiin
-
+// tilastot HTML-taulukkoon
 
 import { useState } from 'react'
 
@@ -17,7 +17,10 @@ const Button = ({ handleClick, text }) => (
 )
 
 const StatisticLine = ({ text, value }) => (
-  <div>{text} {value}</div>
+  <tr>
+    <td>{text}</td>
+    <td>{value}</td>
+  </tr>
 )
 
 const Statistics = ({ good, neutral, bad}) => {
@@ -32,13 +35,17 @@ const Statistics = ({ good, neutral, bad}) => {
   }
   return (
     <div>
-    <h2>statistics</h2>
-    <StatisticLine text="good" value={good} />
-    <StatisticLine text="neutral" value={neutral} />
-    <StatisticLine text="bad" value={bad} />
-    <StatisticLine text="total" value={total} />
-    <StatisticLine text="avarage" value={avarage} />
-    <StatisticLine text="positive" value={positive} />
+      <h2>statistics</h2>
+      <table>
+        <tbody>
+          <StatisticLine text="good" value={good} />
+          <StatisticLine text="neutral" value={neutral} />
+          <StatisticLine text="bad" value={bad} />
+          <StatisticLine text="total" value={total} />
+          <StatisticLine text="avarage" value={avarage.toFixed(1)} />
+          <StatisticLine text="positive" value={positive.toFixed(1) + ' %'} /> 
+        </tbody>
+      </table>
     </div>
   )
 }
