@@ -1,7 +1,14 @@
 // tehtävä 1.12 anekdootit step1
 // antaa taulukosta random anekdootin
+// lisätty nappula generoimaan satunnaisen anekdootin
 
 import { useState } from 'react'
+
+const Button = ({ handleClick, text }) => (
+  <button onClick={handleClick}>
+    {text}
+  </button>
+)
 
 const App = () => {
   const anecdotes = [
@@ -17,10 +24,15 @@ const App = () => {
    
   const [selected, setSelected] = useState(0)
 
+  const getRandom = () => {
+    const index = Math.floor(Math.random() * anecdotes.length)
+    setSelected(index)
+  }
+
   return (
-    
     <div>
-      {anecdotes[Math.floor(Math.random() * anecdotes.length)]}
+      {anecdotes[selected]} <br />
+      <Button handleClick={getRandom} text="next anecdote" />
     </div>
   )
 }
