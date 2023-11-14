@@ -1,7 +1,8 @@
-// tehtävä 1.6 unicafe step1
+// tehtävä 1.7 unicafe step2
 // Unicafe-ruokalan asiakaspalauteappi
 // kerää asiakastyytyväisyydestä: good/neutral/bad 
 // kertoo kyselyn tuloksen
+// lisätty arvot total, avarage, positive
 
 import { useState } from 'react'
 
@@ -32,6 +33,10 @@ const App = () => {
     setBad(bad + 1)  
   }
 
+  const total = good + neutral + bad
+  const avarage = (good - bad) / total
+  const positive = good / total * 100
+
   return (
     <div>
       <h1>UNICAFE</h1>
@@ -40,9 +45,12 @@ const App = () => {
       <Button handleClick={giveNeutral} text="neutral" />
       <Button handleClick={giveBad} text="bad" />
       <h1>statistics</h1>
-      <p>good {good}</p>
-      <p>neutral {neutral}</p>
-      <p>bad {bad}</p>
+      good {good}<br />
+      neutral {neutral}<br />
+      bad {bad}<br />
+      total {total}<br />
+      avarage {avarage}<br />
+      positive {positive} %<br />
     </div>
   )
 }
