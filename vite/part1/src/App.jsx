@@ -1,6 +1,7 @@
-// tehtävä 1.12 anekdootit step1
+// tehtävä 1.13 anekdootit step2
 // antaa taulukosta random anekdootin
 // lisätty nappula generoimaan satunnaisen anekdootin
+// lisätään anekdootin äänestysmahdollisuus
 
 import { useState } from 'react'
 
@@ -23,15 +24,25 @@ const App = () => {
   ]
    
   const [selected, setSelected] = useState(0)
+  const [votes, setVotes] = useState(Array(anecdotes.length).fill(0))
 
   const getRandom = () => {
     const index = Math.floor(Math.random() * anecdotes.length)
     setSelected(index)
+    console.log("indeksi: ", index)
+  }
+
+  const givePoint = () => {
+    const copyTablet = [...votes]
+    copyTablet[selected] += 1
+    setVotes(copyTablet)
+    console.log("äänestetty anekdoottia indeksissä ", selected)
   }
 
   return (
     <div>
       {anecdotes[selected]} <br />
+      <Button handleClick={givePoint} text="vote" />
       <Button handleClick={getRandom} text="next anecdote" />
     </div>
   )
