@@ -30,4 +30,9 @@ var totalAmount = orders.reduce(function(sum, order) {
 SAMA:
 var totalAmount = orders.reduce(function(sum, order) => sum + order.amount, 0 )
 
+EHTOLAUSEKE:
+const tulos = ehto ? val1 : val2
+
+muuttujan tulos arvoksi asetetaan val1:n arvo jos ehto on tosi. 
+Jos ehto ei ole tosi, muuttujan tulos arvoksi tulee val2:n arvo.
 
