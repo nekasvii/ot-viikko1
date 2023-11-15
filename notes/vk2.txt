@@ -1,0 +1,33 @@
+functional programming in JavaScript:
+-functions are values
+-less code means (mostly) less dugs
+-filter: perinteisesti for loopilla taulukko läpi
+-filter & call back funtion are composable
+-find: tekee saman kuin filter, mutta palauttaa vain ekan löytämänsä asian
+-reduce: the multi-tool, implementin functions
+
+var animals = [{name: 'Woff', species: 'dog'},{...},{...},...]
+var dogs = animals.filter(function(animal) {  // funktio vie suorituksen returnille
+  return animal.species === 'dog'  
+}
+----
+var isDog = function(animal) {
+  return animal.speacies ___ 'dog'
+}
+var dogs = animal.filter(isDog)
+var otherAnimals = animals.reject(isDog)
+----
+var names = animals.map(function(animal) {
+  return animal.name + ' is a ' + animal.speacies
+} )
+SAMA: (toimii vain uudemmissa versioissa)
+var names = animals.map((animal) => animal.name)
+----
+var orders = [{amounts: 250},{...},...]
+var totalAmount = orders.reduce(function(sum, order) {
+  return sum + order.amount
+}, 0 )
+SAMA:
+var totalAmount = orders.reduce(function(sum, order) => sum + order.amount, 0 )
+
+
