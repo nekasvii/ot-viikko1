@@ -4,6 +4,7 @@
 
 import Header from './Header'
 import Content from './Content'
+import Total from './Total'
 
 const Course = ({ course }) => {
   console.log("kurssi ja osat ", course.name, course.parts)    
@@ -11,6 +12,7 @@ const Course = ({ course }) => {
     <div>
       <Header courseName={course.name} />
       <Content parts={course.parts} />
+      <Total points={course.parts} />
     </div>
   )
 }

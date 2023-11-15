@@ -1,8 +1,5 @@
-// teht 2.1 kurssitiedot step6
-// pohjana teht 1.5 koodi, johon jatketaan 
-// siirretään komponenttien käsiteltäväksi:
-// Header, Content, Course ja Part
-// importataan Course, jolle on ulkoistettu kaikki kurssitetojen käsittely
+// teht 2.1 kurssitiedot step7
+// lisätään yhteenlaskettujen tehtävien lkm
 
 import Course from './components/Course'
 

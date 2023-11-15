@@ -1,4 +1,4 @@
-// käydään kurssin osakurssit läpi 
+// käydään kurssin osakurssit läpi ja mapataan ne
 // keynä toimii kurssin id (tässä tapauksessa myös nimi kävisä)
 
 import Part from './Part'
